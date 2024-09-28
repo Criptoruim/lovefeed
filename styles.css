@@ -1,0 +1,490 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(to right, #f7f7f7, #fefefe);
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+}
+
+/* Header Section */
+.header {
+    text-align: center;
+    padding: 20px;
+    background-color: #4CAF50;
+    color: white;
+    width: 100%;
+}
+
+.header h1 {
+    font-size: 2rem; /* Use rem for responsive text size */
+}
+
+.header p {
+    font-size: 1.2rem; /* Use rem for responsive text size */
+    margin-top: 10px;
+}
+
+#timer {
+    margin-top: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+  display: none;
+}
+
+/* Submit Section */
+.submit-section {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    margin-top: -20px;
+}
+
+.submit-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.submit-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.submit-form input, .submit-form select {
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    font-size: 1rem; /* Keep inputs consistent */
+    width: 100%;
+}
+
+.submit-form button {
+    padding: 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-form button:hover {
+    background-color: #45a049;
+}
+
+/* Rules Section */
+.rules {
+    margin-top: 10px;
+    color: #888;
+}
+
+/* Most Loved Section */
+.most-loved-section {
+    margin: 20px;
+    text-align: center;
+}
+
+.most-loved-card {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+}
+
+.most-loved-card p {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+/* Global Feed Section */
+.feed-section {
+    width: 90%;
+    max-width: 1200px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.feed-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #4CAF50;
+}
+
+/* Filter and Reset Button Styling */
+.filter-options {
+    margin-bottom: 20px;
+}
+
+.filter-options label {
+    font-size: 1rem;
+}
+
+.filter-options select, .reset-button {
+    padding: 8px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.reset-button {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.reset-button:hover {
+    background-color: #c0392b;
+}
+
+/* Feed Grid for submissions */
+.feed-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.feed-item {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  position: relative;
+}
+
+.feed-item:hover {
+    transform: scale(1.05);
+}
+
+.feed-item p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Footer Section */
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    margin-top: 50px;
+}
+
+.footer p {
+    font-size: 14px;
+}
+
+/* Rules Section */
+.rules-section {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.rules-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.rules-section ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.rules-section ul li {
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: #555;
+    padding-left: 20px;
+    position: relative;
+}
+
+.rules-section ul li::before {
+    content: "✔️";
+    position: absolute;
+    left: 0;
+    color: #4CAF50;
+}
+
+/* Share Button */
+.share-button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 15px;
+}
+
+.share-button:hover {
+    background-color: #45a049;
+}
+
+/* Share Pop Up */
+.hidden {
+    display: none;
+}
+
+/* General popup styling */
+.share-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.share-popup h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.share-popup p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* Share buttons layout */
+.share-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.share-btn {
+    padding: 15px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    color: #fff;
+    flex: 1;
+    margin: 0 10px;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.share-btn i {
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.twitter-btn {
+    background-color: #1DA1F2;
+}
+
+.facebook-btn {
+    background-color: #4267B2;
+}
+
+.instagram-btn {
+    background-color: #E4405F;
+}
+
+.share-btn:hover {
+    opacity: 0.8;
+}
+
+.close-popup {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Adjust max-width for mobile devices */
+@media (max-width: 600px) {
+    .share-popup {
+        width: 90%;
+    }
+}
+
+/* Report Button */
+.report-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 12px; /* Smaller font size */
+    color: #999; /* Subtle gray color */
+    position: absolute; /* Position it in the corner */
+    top: 5px; /* Adjust distance from the top */
+    right: 5px; /* Adjust distance from the right */
+    transition: opacity 0.3s;
+}
+
+.report-button:hover {
+    opacity: 0.6; /* Slight hover effect to make it more noticeable */
+}
+
+.heart-btn {
+    background: transparent; /* Remove background */
+    border: none; /* Remove border */
+    cursor: pointer;
+    font-size: 24px; /* Adjust size of the heart */
+    color: #ff5a5f; /* Red heart color */
+    display: inline-flex;
+    align-items: center;
+}
+
+.heart-btn.active {
+    color: #ff5a5f; /* Change heart color on click */
+}
+
+.heart-count {
+    font-size: 18px;
+    margin-left: 5px;
+}
+
+/* Lightbox Alert Styling */
+        .alert-popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+            display: none; /* Hidden by default */
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .alert-popup.active {
+            display: block; /* Show the alert lightbox */
+        }
+
+        .alert-popup h2 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .alert-popup p {
+            font-size: 1.2rem;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .alert-popup button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .alert-popup button:hover {
+            background-color: #45a049;
+        }
+
+/* Banner styles */
+/* Banner styles */
+.banner {
+    background-color: #f7f7f7; /* Light, neutral background */
+    padding: 15px;
+    text-align: center;
+    width: 90%;
+    margin: 20px auto;
+    color: #333; /* Dark gray text for a modern look */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    animation: fadeIn 1s ease-in-out;
+}
+
+.banner-item {
+    display: flex;
+    align-items: center;
+    margin: 0 20px;
+}
+
+.banner-item i {
+    font-size: 1.2rem;
+    margin-right: 8px;
+    color: #555; /* Subtle icon color */
+}
+
+.banner-item p {
+    margin: 0;
+    font-size: 1.4rem;
+    font-weight: 500; /* Slightly less bold */
+    color: #555;
+}
+
+/* Hover effect */
+.banner-item:hover {
+    background-color: #eaeaea; /* Very light background on hover */
+    transition: background-color 0.2s ease-in-out;
+    border-radius: 5px;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .banner {
+        flex-direction: column;
+        padding: 10px;
+    }
+    .banner-item {
+        margin: 10px 0;
+    }
+    .banner-item i {
+        font-size: 1.6rem;
+    }
+    .banner-item p {
+        font-size: 1.3rem;
+    }
+}
